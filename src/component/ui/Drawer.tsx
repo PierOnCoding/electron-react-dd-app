@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
+import MuiDrawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -11,7 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
-export default function MenuDrawer(props: any) {
+export default function Drawer(props: any) {
 	const { isOpen, toggleDrawer } = props;
 
 	const list = (toggleDrawer: any) => (
@@ -56,11 +56,15 @@ export default function MenuDrawer(props: any) {
 	return (
 		<div>
 			<React.Fragment key="left">
-				<Drawer anchor="left" open={isOpen} onClose={() => toggleDrawer(false)}>
+				<MuiDrawer
+					anchor="left"
+					open={isOpen}
+					onClose={() => toggleDrawer(false)}
+				>
 					{list((e: React.KeyboardEvent | React.MouseEvent, open: boolean) =>
 						toggleDrawer(e, open)
 					)}
-				</Drawer>
+				</MuiDrawer>
 			</React.Fragment>
 		</div>
 	);

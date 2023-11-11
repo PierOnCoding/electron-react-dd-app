@@ -1,6 +1,6 @@
 import * as React from "react";
-import { default as AppBar } from "./AppBar";
-import { default as Drawer } from "./MenuDrawer";
+import AppBar from "./AppBar";
+import Drawer from "./Drawer";
 
 export default function Dashboard() {
 	const [state, setState] = React.useState({

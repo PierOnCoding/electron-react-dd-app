@@ -1,17 +1,17 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
+import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function DenseAppBar(props: any) {
+export default function AppBar(props: any) {
 	const { state, toggleDrawer } = props;
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static" color="primary">
+			<MuiAppBar position="static" color="primary">
 				<Toolbar variant="dense">
 					<IconButton
 						onClick={(e: React.KeyboardEvent | React.MouseEvent) =>
@@ -37,7 +37,7 @@ export default function DenseAppBar(props: any) {
 						<br />
 					</Box>
 				</Toolbar>
-			</AppBar>
+			</MuiAppBar>
 		</Box>
 	);
 }
