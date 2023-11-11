@@ -8,12 +8,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 export default function DenseAppBar(props: any) {
 	const { state, toggleDrawer } = props;
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static" color="primary">
 				<Toolbar variant="dense">
 					<IconButton
-						onClick={() => toggleDrawer(!state.isDrawerOpen)}
+						onClick={(e: React.KeyboardEvent | React.MouseEvent) =>
+							toggleDrawer(e, !state.isDrawerOpen)
+						}
 						edge="start"
 						color="inherit"
 						aria-label="menu"

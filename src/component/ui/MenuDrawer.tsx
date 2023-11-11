@@ -18,8 +18,12 @@ export default function MenuDrawer(props: any) {
 		<Box
 			sx={{ width: 250 }}
 			role="presentation"
-			onClick={() => toggleDrawer(false)}
-			onKeyDown={() => toggleDrawer(false)}
+			onClick={(e: React.KeyboardEvent | React.MouseEvent) =>
+				toggleDrawer(e, false)
+			}
+			onKeyDown={(e: React.KeyboardEvent | React.MouseEvent) =>
+				toggleDrawer(e, false)
+			}
 		>
 			<List>
 				{["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
@@ -53,7 +57,9 @@ export default function MenuDrawer(props: any) {
 		<div>
 			<React.Fragment key="left">
 				<Drawer anchor="left" open={isOpen} onClose={() => toggleDrawer(false)}>
-					{list((open: boolean) => toggleDrawer(open))}
+					{list((e: React.KeyboardEvent | React.MouseEvent, open: boolean) =>
+						toggleDrawer(e, open)
+					)}
 				</Drawer>
 			</React.Fragment>
 		</div>

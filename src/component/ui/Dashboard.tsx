@@ -7,7 +7,18 @@ export default function Dashboard() {
 		isDrawerOpen: false,
 	});
 
-	const toggleDrawer = (open: boolean) => {
+	const toggleDrawer = (
+		event: React.KeyboardEvent | React.MouseEvent,
+		open: boolean
+	) => {
+		if (
+			event.type === "keydown" &&
+			((event as React.KeyboardEvent).key === "Tab" ||
+				(event as React.KeyboardEvent).key === "Shift")
+		) {
+			return;
+		}
+
 		setState({ ...state, isDrawerOpen: open });
 	};
 
@@ -15,11 +26,17 @@ export default function Dashboard() {
 		<>
 			<AppBar
 				state={state}
-				toggleDrawer={(open: boolean) => toggleDrawer(open)}
+				toggleDrawer={(
+					e: React.KeyboardEvent | React.MouseEvent,
+					open: boolean
+				) => toggleDrawer(e, open)}
 			/>
 			<Drawer
 				isOpen={state.isDrawerOpen}
-				toggleDrawer={(open: boolean) => toggleDrawer(open)}
+				toggleDrawer={(
+					e: React.KeyboardEvent | React.MouseEvent,
+					open: boolean
+				) => toggleDrawer(e, open)}
 			/>
 		</>
 	);
