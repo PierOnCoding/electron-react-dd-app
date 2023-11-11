@@ -11,7 +11,7 @@ export default function AppBar(props: any) {
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<MuiAppBar position="static" color="primary">
+			<MuiAppBar>
 				<Toolbar variant="dense">
 					<IconButton
 						onClick={(e: React.KeyboardEvent | React.MouseEvent) =>
@@ -38,6 +38,7 @@ export default function AppBar(props: any) {
 					</Box>
 				</Toolbar>
 			</MuiAppBar>
+			<Toolbar />
 		</Box>
 	);
 }
